@@ -181,3 +181,28 @@ app.listen(PORT, () => {
   console.log(`Server started on : http://localhost:${PORT}/`)
 })
 ```
+
+# Running this example
+
+- git clone this repo
+- cd into the project directory
+- `yarn install`
+- copy `.env.example` into `.env`
+- update the prisma `DATABASE_URL`
+- `yarn prisma generate`
+- `yarn prisma db push`
+- `yarn run start:dev`
+
+# using docker for postgres
+
+- pull postgress image
+
+```
+docker pull postgress
+```
+
+- run container expose the port 5432,
+
+```
+docker run -e POSTGRES_USER=johndoe -e POSTGRES_PASSWORD=randompassword -p 5432:5432 --name cleandemo postgres
+```
