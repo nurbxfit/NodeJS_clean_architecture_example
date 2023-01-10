@@ -14,7 +14,7 @@ it somehow follow the clean architecture diagram.
 
 # Entity
 
-- entity folder contains, bla bla bla bla...
+- entity folder contains, classes that represent the domain concepts of the application. These classes are usually plain old JavaScript objects (POJOs) with no dependencies on any external libraries or frameworks.
 - example of `Todo.entity.ts`
 
 ```ts
