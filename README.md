@@ -7,7 +7,14 @@
 - we first define an entity, just simple class represent the business entity
 - then we define the repository interface for that entity inside our interfaces folder
 - then we implement the repository interface in based on our application specific requirement, in this case prisma, you can use mongo or sql.
-- then we define the use cases for our entiry.
+- then we define the use-cases for our entity.
+- then the use-case will be used by the controller.
+- and the controller will be used by the routers.
+
+The flow of data is from, router -> controller -> usecase -> repository -> entity
+
+it somehow follow the clean architecture diagram.
+![clear architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
 # Entity
 
@@ -39,6 +46,8 @@ class TodoRepository {
 }
 ```
 
+# Persistence
+
 - we can then implement the repository
 
 ```ts
@@ -57,6 +66,9 @@ class TodoPrismaRepository implements TodoRepository {
 ```
 
 - then to use the repository, we need to define the usecase
+
+# Use case
+
 - inside the `domain/usecase` create a new usecase `TodoService.ts`
 - the service, will depen on the todoRepository, it will handle manipulation of data for todo
 
@@ -78,6 +90,8 @@ class TodoService {
 
 export default TodoService
 ```
+
+# Controller
 
 - our use case will then be use by the controller in the presentation layer.
 - our controller will be use by the router.
@@ -114,6 +128,8 @@ class TodoController {
 export default TodoController
 ```
 
+# Router
+
 - the controller depend on the service defined in the usecase
 - in inside `/presentation/routers/` create new `TodoRouter.ts`
 
@@ -143,6 +159,8 @@ class TodoRouter {
 
 export default TodoRouter
 ```
+
+# App Server
 
 - then to assigns the routes to our express application
 
