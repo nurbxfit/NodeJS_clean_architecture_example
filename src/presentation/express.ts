@@ -1,0 +1,3 @@
+export default function ExpressConfig(app: any) {
+  //do some configuration such as, use helmet, bodyParser etc...
+}
