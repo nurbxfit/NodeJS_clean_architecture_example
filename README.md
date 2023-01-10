@@ -4,7 +4,7 @@
 2. yarn tsc --init
 3. yarn prisma init
 
-- we first define an entitry, just simple class represent the business entity
+- we first define an entity, just simple class represent the business entity
 - then we define the repository interface for that entity inside our interfaces folder
 - then we implement the repository interface in based on our application specific requirement, in this case prisma, you can use mongo or sql.
 - then we define the use cases for our entiry.
