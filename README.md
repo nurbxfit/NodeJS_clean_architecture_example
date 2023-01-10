@@ -1,3 +1,9 @@
+# Advantage of clean architecture,
+
+- seperation of concerns, we seperate our code into few layers, and they are less coupled with each other, where our domain layer does not depend on any of the layer above it.
+- portability, because of the seperation, maybe in future, we want to change the presentation layer, we don't have to change the domain layer, let say if we want to change our database, we simply change the Repository implementation in the `infrastructure/persistence`. it will not effect what we wrote in the `domain` layer.
+- maintainability, because it's less coupled, it's easier to maintain, as changing one part in the outer layer doesn't require us to change the inner layer.
+
 # Steps I followed
 
 - we first define an entity, just simple class represent the business entity
