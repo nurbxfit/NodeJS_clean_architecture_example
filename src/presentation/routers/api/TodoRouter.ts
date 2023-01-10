@@ -1,6 +1,7 @@
 import express from "express"
 import TodoService from "../../../domain/usecases/TodoService"
 import TodoFakeRepository from "../../../infrastructure/persistence/TodoFakeRepository"
+import TodoPrismaRepository from "../../../infrastructure/persistence/TodoPrismaRepository"
 import TodoController from "../../controllers/TodoController"
 
 class TodoRouter {
@@ -8,7 +9,8 @@ class TodoRouter {
   controller: TodoController
   constructor() {
     this.controller = new TodoController(
-      new TodoService(new TodoFakeRepository())
+      // new TodoService(new TodoFakeRepository())
+      new TodoService(new TodoPrismaRepository())
     )
   }
 

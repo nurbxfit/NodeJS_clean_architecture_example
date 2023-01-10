@@ -1,6 +1,6 @@
 class Todo {
   protected id: number
-  constructor(protected title: string, protected text: string) {}
+  constructor(public title: string, public text: string) {}
 }
 
 export default Todo

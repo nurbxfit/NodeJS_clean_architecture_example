@@ -17,7 +17,7 @@ class TodoFakeRepository implements TodoRepository {
     return Promise.resolve(item)
   }
 
-  update(item: Todo): Promise<any> {
+  update(id: number, item: Todo): Promise<any> {
     return Promise.resolve(item)
   }
 

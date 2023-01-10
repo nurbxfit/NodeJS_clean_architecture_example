@@ -15,6 +15,8 @@ class TodoController {
   }
 
   async create(req: Request, res: Response, next: NextFunction) {
+    const { body } = req
+    console.log("Creating_from_body:", body)
     const createdTodo = await this.todoService.create("something", "else")
     return res.status(201).json({
       success: true,
