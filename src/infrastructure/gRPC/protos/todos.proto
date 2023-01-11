@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package todo;
+
+import "google/protobuf/empty.proto";
+
+message Todo {
+    int32 id = 1;
+    string title = 2;
+    string text = 3;
+}
+
+//findById
+message TodoRequest{
+    int32 id = 1;
+}
+
+service Todos {
+    rpc GetTodo(TodoRequest) returns (Todo);
+    rpc CreateTodo(stream Todo) returns (google.protobuf.Empty);
+    rpc GetTodos(google.protobuf.Empty) returns (stream Todo);
+}

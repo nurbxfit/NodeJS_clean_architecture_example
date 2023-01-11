@@ -1,5 +1,5 @@
 class Todo {
-  protected id: number
+  public id: number
   constructor(public title: string, public text: string) {}
 }
 
